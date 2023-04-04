@@ -3,6 +3,7 @@ import Counter from "./components/Counter";
 
 function App() {
   const [toggle, setToggle] = useState(false);
+  const [count, setCount] = useState(0);
 
   const onClickToggle = () => {
     setToggle(!toggle);
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <div className="bg-red-100 min-h-screen flex flex-col justify-center items-center">
-      {toggle && <Counter />}
+      {toggle && <Counter count={count} setCount={setCount} />}
       {/* {toggle && <Counter />} 하나일 경우 이런형태로 많이 사용 */}
       {/* {toggle ? <Counter /> : "카운터"} 여러개 일경우 */}
       <button
